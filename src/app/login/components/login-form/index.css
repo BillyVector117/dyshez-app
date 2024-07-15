@@ -1,0 +1,128 @@
+.login-form {
+    height: 100%;
+}
+
+.primary-button {
+    color: #fff;
+    background-color: #e3026f;
+    border: 1px solid #e3026f;
+    font-weight: 500;
+    border-radius: 9999px;
+    border-width: 1px;
+    padding-top: 0.625rem;
+    padding-bottom: 0.700rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    margin-inline-end: 0.5rem;
+    width: 30%;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+}
+
+.btn-active {
+    border-bottom: 5px solid #000;
+}
+
+.btn-inactive {
+    color: #a6a6a6;
+}
+
+.company-buttons {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.company-button {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+    background-color: #f4f4f4;
+    font-weight: 500;
+    border-radius: 9999px;
+    border-width: 1px;
+    padding-top: 0.625rem;
+    padding-bottom: 0.700rem;
+    padding-left: 2.3rem;
+    padding-right: 2.3rem;
+    margin-inline-end: 0.5rem;
+    border: 0;
+    height: 43px;
+}
+
+.labels {
+    display: flex;
+    justify-content: space-around;
+    font-weight: 700;
+    font-size: x-large;
+}
+
+.label-enter-data {
+    font-weight: 500;
+    font-size: medium;
+    display: block;
+    text-align: center;
+    height: 50px;
+    margin-top: 2.5rem;
+    margin-bottom: 8rem;
+}
+
+.input-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.30rem;
+}
+
+.terms-sign-up-check {
+    accent-color: #e3026f;
+    margin-inline-end: 0;
+    width: 20px;
+
+}
+
+.input-container {
+    position: relative;
+    width: 80%;
+}
+
+.input-container .icon {
+    position: absolute;
+    left: 10px;
+    top: 33%;
+    transform: translateY(-50%);
+    color: #aaa;
+}
+
+input[type=text],
+input[type="email"],
+input[type="password"] {
+    padding-top: 0.625rem;
+    padding-bottom: 0.700rem;
+    padding-left: 2rem;
+    padding-right: 1.25rem;
+    margin-inline-end: 0.5rem;
+
+    margin-bottom: 0.8rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    border-width: 1px;
+    width: 70%;
+}
+
+input.focus\:outline-none:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.number-changed {
+    color: #797979;
+    font-size: smaller;
+    font-weight: 500;
+}

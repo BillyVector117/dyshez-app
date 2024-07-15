@@ -1,0 +1,5 @@
+class loginNotifier {
+    constructor() {
+
+    }
+}

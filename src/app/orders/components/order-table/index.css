@@ -1,0 +1,19 @@
+.order-table {
+    width: max-content;
+}
+.label-number {
+color: black;
+}
+
+.icon-inactive {
+    width: fit-content;
+    border-left: 0px;
+
+}
+.icon-active {
+    width: fit-content;
+    border-left: 5px solid red;
+    border-top-left-radius: 0rem;
+    border-bottom-left-radius: 0rem;
+
+}
