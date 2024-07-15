@@ -35,7 +35,6 @@ const OrderTable = () => {
 
         return dd + '/' + mm + '/' + yyyy;
     }
-    console.log('data', data)
     return (
 
         <div className="order-table relative w-full overflow-x-auto shadow-md sm:rounded-lg mt-5">

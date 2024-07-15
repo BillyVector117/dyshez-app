@@ -2,7 +2,6 @@ import React from 'react'
 import './index.css'
 import Image from 'next/image'
 import Link from 'next/link'
-// unfinished
 const ResetPasswordForm = () => {
     return (
         <form className='forgot-password-form'>

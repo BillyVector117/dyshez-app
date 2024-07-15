@@ -11,7 +11,7 @@ import { toast, ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
 
 interface IData {
-    name?: String;
+    email?: String;
     password?: String;
 }
 const LoginForm = () => {
@@ -40,14 +40,22 @@ const LoginForm = () => {
 
     const handleSubmit = (event: any) => {
         event.preventDefault()
-        push('/orders')
 
- /*        if (!data?.name || data?.password) {
+        if (!data?.email || !data?.password) {
             toast.error("Missing Data !", {
                 position: "top-center"
-              });
+            });
 
-        } */
+        } else {
+            toast.success("Welcome back!", {
+                position: "top-center"
+            });
+            setTimeout(() => {
+                push('/orders')
+
+            }, 3000);
+
+        }
 
     }
 
@@ -94,7 +102,7 @@ const LoginForm = () => {
                     </>
                 )
             }
-<ToastContainer />
+            <ToastContainer />
         </form>
     )
 }

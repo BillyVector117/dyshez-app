@@ -7,7 +7,6 @@ const Layout = ({ children }: any) => {
     const [isLoginOrRegister, setIsLoginOrRegister] = useState('login')
     useEffect(() => {
         const handleNotification = (message: any) => {
-            console.log(message);
             setIsLoginOrRegister(message)
         };
 
@@ -17,7 +16,6 @@ const Layout = ({ children }: any) => {
             notifier.unsubscribe(handleNotification);
         };
     }, []);
-    console.log('isLoginOrRegister', isLoginOrRegister)
     return (
         <div className="main-content-layout">
             <div className="mark">
@@ -32,7 +30,7 @@ const Layout = ({ children }: any) => {
 
                 </div>
                 {
-                    
+
                     isLoginOrRegister == 'login' && (
                         <div className="form-layer">
                             <Image alt='login-layer' src={'/login-layer.svg'} width={1450} height={2560} />
