@@ -1,5 +1,8 @@
-import React from 'react'
+'use client'
+import React, { useEffect, useState } from 'react'
 import './index.css'
+import supabase from '@/lib/supabaseClient';
+
 const OrderTable = () => {
 
     const data = [
@@ -35,6 +38,24 @@ const OrderTable = () => {
 
         return dd + '/' + mm + '/' + yyyy;
     }
+
+
+    const [orders, setOrders] = useState<any[] | null>([])
+
+    const getOrders = async () => {
+        const { data, error } = await supabase.from("orders").select("*")
+        if (error) setOrders([])
+        setOrders(data)
+    }
+
+    useEffect(() => {
+        getOrders()
+    }, [])
+
+    let USDollar = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    });
     return (
 
         <div className="order-table relative w-full overflow-x-auto shadow-md sm:rounded-lg mt-5">
@@ -122,28 +143,28 @@ const OrderTable = () => {
                 </thead>
                 <tbody>
                     {
-                        data.map((item) => (
-                            <tr key={item.orderId} className="bg-white border-b dark:bg-white-800 dark:border-gray-200">
+                        orders && orders.map((item) => (
+                            <tr key={item.id} className="bg-white border-b dark:bg-white-800 dark:border-gray-200">
                                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-gray-900">
-                                    #{item.orderId}
+                                    #{item.id}
                                 </th>
                                 <td className="px-6 py-4">
                                     {item.customer}
                                 </td>
                                 <td className="px-6 py-4">
-                                    {getDate(item.date.toString())}
+                                    {item.date}
                                 </td>
                                 <td className="px-6 py-4">
-                                    {item.time.toString()}
+                                    {item.time.slice(0, 8)}
                                 </td>
                                 <td className="px-6 py-4">
                                     {item.mode}
                                 </td>
                                 <td className="px-6 py-4">
-                                    ${item.total}
+                                    {USDollar.format(item.total)}
                                 </td>
                                 <td className="px-6 py-4">
-                                    {item.paymentMethod}
+                                    {item.paymentmethod}
                                 </td>
                                 <td className="px-6 py-4 text-right">
                                     {item.status == 'accepted' ? (

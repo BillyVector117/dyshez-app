@@ -1,0 +1,10 @@
+.file-select input[type="file"] {
+    opacity: 0;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    right: -150%;
+    top: -150%;
+    cursor: pointer;
+
+}
